@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>MarketHub — TON Marketplace</title>
+
+  <!-- Telegram Web App JS (for initData) -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- TonConnect JS placeholder (integrate real SDK in production) -->
+  <!-- <script src="https://unpkg.com/@tonconnect/sdk/dist/tonconnect.umd.js"></script> -->
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Loading / splash -->
+    <div id="splash" class="splash">
+      <div class="logo-wrap">
+        <div id="logo" class="logo">MH</div>
+        <div class="logo-anim note">MarketHub</div>
+      </div>
+      <div class="splash-anim">
+        <div class="particles"></div>
+      </div>
+    </div>
+
+    <!-- Main app -->
+    <div id="main" class="hidden">
+      <header class="banner">
+        <div class="banner-left">
+          <div class="brand">
+            <div class="brand-logo">MH</div>
+            <div class="brand-title">MarketHub</div>
+          </div>
+        </div>
+        <div class="banner-right">
+          <div class="banner-detail">NFT Marketplace — TON</div>
+        </div>
+      </header>
+
+      <div class="balance-row">
+        <div class="balance-left">
+          <div class="ton-logo">TON</div>
+          <div class="balance-amount" id="balance-amount">--</div>
+        </div>
+        <div class="balance-right">
+          <button id="btn-refresh" class="btn small">Refresh</button>
+        </div>
+      </div>
+
+      <main class="content">
+        <div class="catalog" id="catalog">
+          <!-- cards will be injected here -->
+        </div>
+
+        <aside class="side-scroll">
+          <div class="scroll-hint">●</div>
+        </aside>
+      </main>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="catalog">NFT Catalog</button>
+        <button class="tab" data-tab="gifts">My Gifts</button>
+        <button class="tab" data-tab="premium">Premium&Stars</button>
+        <button class="tab" data-tab="giveaways">Giveaways</button>
+        <button class="tab" id="admin-tab" data-tab="admin" style="display:none">Admin</button>
+      </nav>
+    </div>
+
+    <!-- Modal / Toast -->
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
